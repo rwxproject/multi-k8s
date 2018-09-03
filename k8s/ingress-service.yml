@@ -14,7 +14,7 @@ spec:
         - www.rwx.systems
       secretName: rwx-systems
   rules:
-    - host: system.rwx
+    - host: rwx.systems
       http:
         paths:
           - path: /
@@ -25,7 +25,7 @@ spec:
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 5000
-    - host: www.system.rwx
+    - host: www.rwx.systems
       http:
         paths:
           - path: /
