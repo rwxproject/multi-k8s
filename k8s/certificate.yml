@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: rwx-systems-tls
+spec:
+  secretName: rwx-systems
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: rwx.systems
+  dnsNames:
+    - rwx.systems
+    - www.rwx.systems
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - rwx.systems
+          - www.rwx.systems
